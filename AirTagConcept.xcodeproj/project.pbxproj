@@ -13,6 +13,8 @@
 		A89FB7AF269A014D006D52F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A89FB7AE269A014D006D52F3 /* Preview Assets.xcassets */; };
 		A89FB7BA269A014D006D52F3 /* AirTagConceptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89FB7B9269A014D006D52F3 /* AirTagConceptTests.swift */; };
 		A89FB7C5269A014D006D52F3 /* AirTagConceptUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89FB7C4269A014D006D52F3 /* AirTagConceptUITests.swift */; };
+		A8D6A51F269B497E0078F64F /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D6A51E269B497E0078F64F /* RoundedCorner.swift */; };
+		A8D6A521269B644C0078F64F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D6A520269B644C0078F64F /* MapView.swift */; };
 		A8E53B0E269A1028008398DC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E53B0D269A1028008398DC /* HomeView.swift */; };
 		A8E53B10269A2030008398DC /* DeviceItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E53B0F269A2030008398DC /* DeviceItemCell.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +49,8 @@
 		A89FB7C0269A014D006D52F3 /* AirTagConceptUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirTagConceptUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A89FB7C4269A014D006D52F3 /* AirTagConceptUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirTagConceptUITests.swift; sourceTree = "<group>"; };
 		A89FB7C6269A014D006D52F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8D6A51E269B497E0078F64F /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		A8D6A520269B644C0078F64F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A8E53B0D269A1028008398DC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A8E53B0F269A2030008398DC /* DeviceItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,10 +106,12 @@
 				A89FB7A7269A014B006D52F3 /* AirTagConceptApp.swift */,
 				A89FB7A9269A014B006D52F3 /* ContentView.swift */,
 				A8E53B0D269A1028008398DC /* HomeView.swift */,
+				A8D6A520269B644C0078F64F /* MapView.swift */,
 				A89FB7AB269A014D006D52F3 /* Assets.xcassets */,
 				A89FB7B0269A014D006D52F3 /* Info.plist */,
 				A89FB7AD269A014D006D52F3 /* Preview Content */,
 				A8E53B0F269A2030008398DC /* DeviceItemCell.swift */,
+				A8D6A51E269B497E0078F64F /* RoundedCorner.swift */,
 			);
 			path = AirTagConcept;
 			sourceTree = "<group>";
@@ -265,6 +271,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8D6A51F269B497E0078F64F /* RoundedCorner.swift in Sources */,
+				A8D6A521269B644C0078F64F /* MapView.swift in Sources */,
 				A8E53B0E269A1028008398DC /* HomeView.swift in Sources */,
 				A89FB7AA269A014B006D52F3 /* ContentView.swift in Sources */,
 				A8E53B10269A2030008398DC /* DeviceItemCell.swift in Sources */,

@@ -11,6 +11,7 @@ struct HomeView: View {
     @State private var selectedItem = 0
     @State var devices: [DeviceItem] = []
     @State var selectedType: DeviceItemType = .device
+    @State private var selectedDevice: DeviceItem!
     
     var filtered: [DeviceItem] {
         devices.filter { $0.type == selectedType}
@@ -20,9 +21,11 @@ struct HomeView: View {
         GridItem(.adaptive(minimum: 320, maximum: 350)),
     ]
     
+    let backgroundColor = Color.gray.opacity(0.1)
+    
     var body: some View {
         ZStack {
-            Color.gray.opacity(0.1)
+            backgroundColor
                 .edgesIgnoringSafeArea(.all)
             
             VStack(alignment: .leading, spacing: 0) {
@@ -44,9 +47,8 @@ struct HomeView: View {
                 }
                 
                 tabbar
-                    .background(Color.red)
+                        
             }
-            
         }
         .navigationBarHidden(true)
     }
@@ -101,7 +103,10 @@ struct HomeView: View {
             
             LazyVGrid(columns: grid, alignment: .center, spacing: 30) {
                 ForEach(filtered, id: \.id) { device in
-                    DeviceItemCell(device: device)
+                    DeviceItemCell(device: device, deviceToSelect: $selectedDevice)
+                        .fullScreenCover(item: $selectedDevice, onDismiss: {}, content: {
+                            MapView(deviceItem: $0)
+                        })
                 }
             }
         }
@@ -119,7 +124,6 @@ struct HomeView: View {
                 Image(systemName: "circle.grid.2x2")
                 Image(systemName: "switch.2")
             }
-            
         }
         .frame(height: 60)
     }

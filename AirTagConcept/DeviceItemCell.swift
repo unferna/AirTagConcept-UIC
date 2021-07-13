@@ -25,6 +25,7 @@ struct DeviceItem: Identifiable {
 
 struct DeviceItemCell: View {
     var device: DeviceItem
+    @Binding var deviceToSelect: DeviceItem?
     
     var batteryIconString: String {
         if device.batteryCharge == 100 {
@@ -35,6 +36,17 @@ struct DeviceItemCell: View {
         }
         
         return "battery.0"
+    }
+    
+    var batteryColor: Color {
+        if device.batteryCharge >= 60 {
+            return .green
+        
+        } else if device.batteryCharge >= 20 {
+            return .yellow
+        }
+        
+        return .red
     }
     
     var body: some View {
@@ -64,6 +76,7 @@ struct DeviceItemCell: View {
                     
                     
                     Image(systemName: batteryIconString)
+                        .foregroundColor(batteryColor)
                     Text("\(device.batteryCharge)%")
                         .font(.footnote)
                         .fontWeight(.semibold)
@@ -73,7 +86,9 @@ struct DeviceItemCell: View {
                 .padding(.horizontal, 5)
                 
                 HStack {
-                    Button(action: {}) {
+                    Button(action: {
+                        deviceToSelect = device
+                    }) {
                         HStack {
                             Image(systemName: "play.circle.fill")
                                 .foregroundColor(.blue)
@@ -87,7 +102,6 @@ struct DeviceItemCell: View {
                         .cornerRadius(10)
                     
                     }.buttonStyle(PlainButtonStyle())
-                    
                     
                     Button(action: {}) {
                         HStack {
@@ -162,7 +176,7 @@ struct DeviceItemCell_Previews: PreviewProvider {
     )
     
     static var previews: some View {
-        DeviceItemCell(device: testDevice)
+        DeviceItemCell(device: testDevice, deviceToSelect: .constant(nil))
             .previewLayout(.fixed(width: 359, height: 200))
     }
 }
